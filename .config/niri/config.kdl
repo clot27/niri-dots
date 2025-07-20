@@ -337,8 +337,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T { spawn "alacritty" "-e" "fish"; }
-    Mod+D { spawn "bash" "-c" "rofi -show drun"; }
+    Mod+T { spawn "alacritty"; }
+    Mod+D { spawn "bash" "-c" "walker"; }
     Mod+B { spawn "waybar"; }
     Super+Alt+L { spawn "swaylock"; }
 
