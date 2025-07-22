@@ -6,3 +6,6 @@ decorations = "none"
 
 [general]
 live_config_reload = true
+import = [
+  "~/niri-dots/.config/alacritty/themes/catppuccin-mocha.toml"
+]
