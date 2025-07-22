@@ -302,6 +302,18 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="Alacritty"
+    // opacity 0.8
+    geometry-corner-radius 12
+    clip-to-geometry true
+    border {
+        on
+        width 2
+        active-color "#4f10e1"
+        
+    }
+}
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
