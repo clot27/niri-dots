@@ -304,14 +304,14 @@ window-rule {
 
 window-rule {
     match app-id="Alacritty"
-    // opacity 0.8
-    geometry-corner-radius 12
+    draw-border-with-background false
+    opacity 0.8
+    geometry-corner-radius 20
     clip-to-geometry true
-    border {
+    focus-ring {
         on
-        width 2
-        active-color "#4f10e1"
-        
+        width 3.5
+        active-color "#89b4fa"
     }
 }
 // Example: block out two password managers from screen capture.
