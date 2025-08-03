@@ -5,10 +5,9 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
-}: let
-  unstable = import <unstable> {config = {allowUnfree = true;};};
-in {
+}: {
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
@@ -16,6 +15,7 @@ in {
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -41,14 +41,14 @@ in {
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  
+
   programs.niri.enable = true;
-  
+
   services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
 
   environment.variables = {
-  EDITOR = "hx";
+    EDITOR = "hx";
   };
 
   # Configure keymap in X11
@@ -82,7 +82,15 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with unstable.pkgs; [
+  nixpkgs.overlays = [
+    (final: _: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (final.stdenv.hostPlatform) system;
+        inherit (final) config;
+      };
+    })
+  ];
+  environment.systemPackages = with pkgs.unstable; [
     alacritty
     alejandra
     bottom
@@ -101,7 +109,7 @@ in {
     waybar
     xwayland-satellite
   ];
-  fonts.packages = with unstable.pkgs; [
+  fonts.packages = with pkgs.unstable; [
     nerd-fonts.hack
   ];
 
@@ -154,5 +162,5 @@ in {
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
