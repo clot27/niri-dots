@@ -4,8 +4,9 @@
 {
   config,
   lib,
-  pkgs,
   inputs,
+  pkgs,
+  pkgsUnstable,
   ...
 }: {
   imports = [
@@ -17,6 +18,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = "nixos-niri"; # Define your hostname.
@@ -44,6 +47,7 @@
 
   programs.niri.enable = true;
 
+  # Remove bloat
   services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
 
@@ -80,17 +84,17 @@
 
   programs.firefox.enable = true;
 
+  # Allow unstable pkgs
+  nixpkgs.config.allowUnfree = true;
+
+  _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  nixpkgs.overlays = [
-    (final: _: {
-      unstable = import inputs.nixpkgs-unstable {
-        inherit (final.stdenv.hostPlatform) system;
-        inherit (final) config;
-      };
-    })
-  ];
-  environment.systemPackages = with pkgs.unstable; [
+  environment.systemPackages = with pkgsUnstable; [
     alacritty
     alejandra
     bottom
@@ -109,7 +113,7 @@
     waybar
     xwayland-satellite
   ];
-  fonts.packages = with pkgs.unstable; [
+  fonts.packages = with pkgsUnstable; [
     nerd-fonts.hack
   ];
 
