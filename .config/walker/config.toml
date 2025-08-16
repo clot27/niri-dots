@@ -2,13 +2,16 @@ app_launch_prefix = ""
 terminal_title_flag = ""
 locale = ""
 close_when_open = false
-theme = "default"
+theme = "mocha"
 monitor = ""
 hotreload_theme = false
 as_window = false
 timeout = 0
 disable_click_to_close = false
 force_keyboard_focus = false
+theme_location = []
+plugin_location = []
+js_runtime = "node"
 
 [keys]
 accept_typeahead = ["tab"]
@@ -55,6 +58,13 @@ resume_last_query = false
 [activation_mode]
 labels = "jkl;asdf"
 
+[builtins.hyprland_keybinds]
+show_sub_when_single = true
+weight = 5
+name = "hyprland_keybinds"
+placeholder = "Hyprland Keybinds"
+switcher_only = true
+
 [builtins.applications]
 weight = 5
 name = "applications"
@@ -67,6 +77,7 @@ show_sub_when_single = true
 show_icon_when_single = true
 show_generic = true
 history = true
+icon = "applications-other"
 
 [builtins.applications.actions]
 enabled = true
@@ -158,7 +169,7 @@ typeahead = true
 show_unqualified = false
 
 [builtins.symbols]
-after_copy = ""
+exec = "wl-copy '%RESULT%'"
 weight = 5
 name = "symbols"
 placeholder = "Symbols"
@@ -168,7 +179,8 @@ typeahead = true
 
 [builtins.finder]
 use_fd = false
-fd_flags = "--ignore-vcs --type file"
+fd_flags = "--ignore-vcs --type file --type directory"
+cmd_alt = "xdg-open $(dirname ~/%RESULT%)"
 weight = 5
 icon = "file"
 name = "finder"
