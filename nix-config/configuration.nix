@@ -82,7 +82,7 @@
     ];
   };
 
-  programs.firefox.enable = false;
+  programs.firefox.enable = true;
 
   # Allow unstable pkgs
   nixpkgs.config.allowUnfree = true;
