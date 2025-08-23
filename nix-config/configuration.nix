@@ -44,7 +44,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
   programs.niri.enable = true;
 
   # Remove bloat
@@ -107,6 +106,7 @@
     wget
     yazi
     # Window manager
+    ly
     swww
     swaylock
     walker
