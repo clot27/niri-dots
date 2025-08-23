@@ -44,8 +44,18 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.displayManager.ly.enable = true;
   programs.niri.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animate = true;
+      animation = "cmatrix";
+      hide_borders = true;
+      clock = "%c";
+      bigclock = true;
+      hide_f1_commands = true;
+    };
+  };
 
   # Remove bloat
   services.xserver.excludePackages = [pkgs.xterm];
