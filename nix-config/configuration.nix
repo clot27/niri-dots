@@ -53,7 +53,7 @@
       hide_borders = true;
       clock = "%c";
       bigclock = true;
-      hide_f1_commands = true;
+      hide_key_hints = true;
     };
   };
 
