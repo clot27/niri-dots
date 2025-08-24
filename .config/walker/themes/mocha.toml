@@ -70,6 +70,7 @@ v_align = "fill"
 width = 20
 x_align = 0.5
 y_align = 0.5
+hide = true
 
 [ui.window.box.scroll.list.item.icon]
 pixel_size = 26
