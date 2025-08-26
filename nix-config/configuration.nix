@@ -47,14 +47,14 @@
   programs.niri.enable = true;
   services.displayManager.ly = {
     enable = true;
-    # settings = {
-    #   animate = true;
-    #   animation = "cmatrix";
-    #   hide_borders = true;
-    #   clock = "%c";
-    #   bigclock = true;
-    #   hide_key_hints = true;
-    # };
+    settings = {
+      animate = true;
+      animation = "cmatrix";
+      hide_borders = true;
+      clock = "%c";
+      bigclock = true;
+      hide_key_hints = true;
+    };
   };
 
   # Remove bloat
