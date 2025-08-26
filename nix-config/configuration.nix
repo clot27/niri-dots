@@ -111,12 +111,13 @@
     fastfetch
     fish
     git
-    gitui
+    # gitui
     helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     sudo-rs
     wget
     yazi
     # Window manager
+    ly
     swww
     swaylock
     walker
