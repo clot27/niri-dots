@@ -44,6 +44,14 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "matrix";
+      clock = "%c";
+      # bigclock = "en"; --> this is breaking stuff
+    };
+  };
   programs.niri.enable = true;
 
   # Remove bloat
@@ -106,7 +114,6 @@
     wget
     yazi
     # Window manager
-    ly
     swww
     swaylock
     walker
