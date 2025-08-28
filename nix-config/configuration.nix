@@ -49,8 +49,7 @@
     settings = {
       animation = "matrix";
       clock = "%c";
-      # bigclock = "en"; # --> this is breaking stuff
-      lang = "en";
+      # bigclock = "en"; --> this is breaking stuff
     };
   };
   programs.niri.enable = true;

@@ -352,6 +352,7 @@ binds {
     Mod+T { spawn "alacritty" "-e" "fish"; }
     Mod+D { spawn "walker"; }
     Mod+B { spawn "waybar"; }
+    Alt+F4 { spawn "~/niri-dots/scripts/walker-power.sh"; } // -> Make sure walker-power.sh is chmod 
     Super+Alt+L { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.

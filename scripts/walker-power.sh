@@ -1,11 +1,13 @@
-options="Shutdown\nReboot\nLock"
+options="Shutdown\nReboot\nLock\nSleep"
 output=$(echo -e $options | walker --dmenu -H)
 if [[ "$output" == "Shutdown" ]]; then
-  echo "shutdown"
+  shutdown
 elif [[ "$output" == "Reboot" ]]; then
-  echo "reboot"
+  reboot
 elif [[ "$output" == "Lock" ]]; then
   swaylock
+elif [[ "$output" == "Sleep" ]]; then
+  systemctl suspend
 else
   echo "foo"
 fi
