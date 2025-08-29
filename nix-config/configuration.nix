@@ -52,7 +52,16 @@
       # bigclock = "en"; --> this is breaking stuff
     };
   };
+  programs.firefox.enable = true;
   programs.niri.enable = true;
+  security = {
+    sudo.enable = false;
+    sudo-rs = {
+      enable = true;
+      execWheelOnly = true;
+      wheelNeedsPassword = true;
+    };
+  };
 
   # Remove bloat
   services.xserver.excludePackages = [pkgs.xterm];
@@ -89,8 +98,6 @@
     ];
   };
 
-  programs.firefox.enable = true;
-
   # Allow unstable pkgs
   nixpkgs.config.allowUnfree = true;
 
@@ -110,7 +117,6 @@
     # gitui
     helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     macchina
-    sudo-rs
     wget
     yazi
     # Window manager
@@ -124,14 +130,6 @@
     nerd-fonts.hack
   ];
 
-  security = {
-    sudo.enable = false;
-    sudo-rs = {
-      enable = true;
-      execWheelOnly = true;
-      wheelNeedsPassword = true;
-    };
-  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

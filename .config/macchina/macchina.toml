@@ -1,0 +1,3 @@
+disks = ["/"]
+disk_space_percentage = true
+memory_percentage = true
