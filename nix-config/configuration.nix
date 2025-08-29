@@ -105,11 +105,11 @@
     alacritty
     alejandra
     bottom
-    fastfetch
     fish
     git
     # gitui
     helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    macchina
     sudo-rs
     wget
     yazi
