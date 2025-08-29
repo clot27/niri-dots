@@ -4,8 +4,8 @@ ln -s ~/niri-dots/.config/fastfetch ~/.config/fastfetch
 ln -s ~/niri-dots/.config/fish ~/.config/fish
 ln -s ~/niri-dots/.config/gitui ~/.config/gitui
 ln -s ~/niri-dots/.config/helix ~/.config/helix
+ln -s ~/niri-dots/.config/ironbar ~/.config/ironbar
 ln -s ~/niri-dots/.config/niri ~/.config/niri
 ln -s ~/niri-dots/.config/swaylock ~/.config/swaylock
 ln -s ~/niri-dots/.config/walker ~/.config/walker
-ln -s ~/niri-dots/.config/waybar ~/.config/waybar
 ln -s ~/niri-dots/.config/yazi ~/.config/yazi
