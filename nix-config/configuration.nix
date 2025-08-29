@@ -114,10 +114,10 @@
     wget
     yazi
     # Window manager
+    ironbar
     swww
     swaylock
     walker
-    waybar
     xwayland-satellite
   ];
   fonts.packages = with pkgsUnstable; [
