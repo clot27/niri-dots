@@ -46,7 +46,7 @@
   services.xserver.enable = true;
   services.displayManager.ly = {
     enable = true;
-    package = pkgsUnstable.ly;
+    # package = pkgsUnstable.ly;
     settings = {
       animation = "matrix";
       clock = "%c";
