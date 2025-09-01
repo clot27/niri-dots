@@ -124,7 +124,6 @@
     ironbar
     swww
     swaylock
-    upower
     walker
     xwayland-satellite
   ];

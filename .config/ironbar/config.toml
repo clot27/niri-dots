@@ -1,12 +1,26 @@
 position = "bottom"
 height = 42
-start = []
-center = []
 
-[[end]]
-type = "battery"
-format = "{percentage}%"
+[[start]]
+type = "volume"
+format = "{icon} {percentage}%"
+max_volume = 100
+truncate = "middle"
 
-[[end.thresholds]]
-warning = 20
-critical = 5
+[start.icons]
+volume_high = "al"
+volume_medium = "ok"
+volume_low = "lo"
+muted = "yu"
+
+[[center]]
+type = "clock"
+format = "%d/%m/%Y %H:%M"
+
+# [[end]]
+# type = "upower"
+# format = "{percentage}%"
+
+# [[end.thresholds]]
+# warning = 20
+# critical = 5
