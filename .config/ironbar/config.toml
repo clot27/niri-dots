@@ -1,5 +1,12 @@
 position = "bottom"
 height = 42
 start = []
-cente = []
-end = []
+center = []
+
+[[end]]
+type = "battery"
+format = "{percentage}%"
+
+[[end.thresholds]]
+warning = 20
+critical = 5
