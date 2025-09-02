@@ -18,10 +18,6 @@ echo "NixOS rebuilding..."
 
 sudo nixos-rebuild switch --impure --flake .
 
-current=$(nixos-rebuild list-generations | grep current)
-
-git commit -am "$current"
-
 popd
 
 echo "Built succesfully!"
