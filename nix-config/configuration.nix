@@ -53,6 +53,7 @@
       # bigclock = "en"; --> this is breaking stuff
     };
   };
+  services.upower.enable = true;
   programs.firefox.enable = true;
   programs.niri.enable = true;
   security = {
@@ -124,6 +125,7 @@
     ironbar
     swww
     swaylock
+    upower
     walker
     xwayland-satellite
   ];

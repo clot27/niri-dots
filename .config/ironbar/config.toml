@@ -27,10 +27,11 @@ format = "        %H:%M\n%d/%m/%Y"
 [[end]]
 type = "network_manager"
 icon_size = 32
-# [[end]]
-# type = "upower"
-# format = "{percentage}%"
 
-# [[end.thresholds]]
-# warning = 20
-# critical = 5
+[[end]]
+type = "upower"
+format = "{percentage}%"
+
+[[end.thresholds]]
+warning = 20
+critical = 5
